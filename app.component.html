@@ -1,0 +1,71 @@
+<html>
+ <h4>{{pgtitle}}</h4>
+  <div>
+  <input type="text"  placeholder="Enter Amount :" [(ngModel)]="fromAmt" />
+  <h4>CONERT FROM : </h4>
+  <select name="conv1" (change)="covertFrom($event)">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="CNY">CNY</option>
+  </select>
+  <h4>CONVERT TO : </h4>
+  <select name="conv2" (change)="covertTo($event)">
+    <option value="INR">INR</option>
+    <option value="USD">USD</option>
+    <option value="CNY">CNY</option>
+  </select>
+  <br>
+  <br>
+  <button (click)="convert()">CONVERT</button>
+<h4>CONVERTED VALUE : {{currCalc}}</h4>  
+</div>
+<div>
+  <h4>
+   PAYMENT SERVICE
+  </h4>
+  <button (click)="Display()">Display</button>
+  <h4> View Payment Records in the Console Window</h4>
+  </div>
+<div>
+<h4>FRADULENT PAYMENT SERVICE </h4>
+<input type="text"  placeholder="Enter Currency :" (change)="txtEvent($event)" />
+<button (click)="BannedCurrecy(enterCurr)"> CHECK BANNED CURRENCIES </button> 
+<br>
+<br>
+<input type="number" placeholder="Enter Amount : " (change)="amtEvent($event)"/>
+<button (click)="amtLimit(enterAmt)">CHECK AMOUNT LIMIT</button>
+<br>
+<br>
+<input type="number" placeholder="Enter Account Number: " (change)="accEvent($event)"/>
+<button (click)="checkAcc(enterAcc)">CHECK BLOCKED ACCOUNT</button>
+<br>
+<br>
+<input type="date" placeholder="Enter Date & Time : " (change)="DateTimeEvent($event)"/>
+<button (click)="checkDateTime()">CHECK DATE & TIME EXPIRY </button>
+<br>
+<br>
+</div>
+<div>
+<h4>UNIT CONVERSION</h4>
+<input type="number"  placeholder="Enter Value :" [(ngModel)]="fromUnit" />
+<h4>CONVERT UNIT FROM : </h4>
+<select name="unit1" (change)="unitFrom($event)">
+  <option value="cm">cm</option>
+  <option value="mtr">mtr</option>
+  <option value="centigrade">centigrade</option>
+  <option value="Farenheit">Farenheit</option>
+</select>
+<h4>CONVERT UNIT TO : </h4>
+<select name="unit2" (change)="unitTo($event)">
+  <option value="cm">cm</option>
+  <option value="mtr">mtr</option>
+  <option value="centigrade">centigrade</option>
+  <option value="Farenheit">Farenheit</option>
+</select>
+<button (click)="unitConversion()"> DISPLAY UNIT CONVERSION </button>
+<h4>CONVERTED VALUE : {{CovResult}}</h4>  
+</div>
+<div>
+  <h4> </h4>
+</div>
+</html>
